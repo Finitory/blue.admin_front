@@ -15,6 +15,9 @@ COPY index.html tsconfig*.json vite.config.ts ./
 COPY public/ public/
 COPY src/ src/
 
+ARG VITE_LOCAL_CONNECTIVITY_ENABLED=false
+ENV VITE_LOCAL_CONNECTIVITY_ENABLED=${VITE_LOCAL_CONNECTIVITY_ENABLED}
+
 RUN pnpm build
 
 # Runtime stage
